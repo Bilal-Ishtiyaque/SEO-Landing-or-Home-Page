@@ -1,0 +1,298 @@
+
+/* fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+/* variables */
+
+:root {
+  --bg-primary: #6610f2;
+  --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+}
+
+/* reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* default styling */
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+/* styling start */
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-primary);
+}
+
+/* header */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.wrapper {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  padding: 10px 15px 5px 40px;
+  align-items: center;
+}
+
+.logo {
+}
+
+.logo a {
+  color: white;
+}
+
+/* navbar start */
+
+.nav_container {
+  display: flex;
+  margin-left: auto;
+}
+
+.close {
+  font-size: 1.3rem;
+  -webkit-text-stroke-width: 1px;
+  display: none;
+}
+
+.nav_list {
+  display: flex;
+  gap: 23px;
+  padding: 0 20px;
+}
+
+.nav_link {
+  color: white;
+  font-weight: 600;
+}
+
+/* navbar ends */
+
+.bars {
+  font-size: 1.3rem;
+  color: white;
+  padding: 0 20px;
+  display: none;
+}
+
+/* header ends */
+
+/* hero section  */
+
+main {
+}
+
+.hero_section {
+  min-height: 100vh;
+  background-image: url("./images/bg-dot.png"), url("./images/bg-dot.png"),
+    url("./images/bg-round.png"), url("./images/bg-tree.png"),
+    url("./images/bg-bottom-hero.png");
+  background-repeat: no-repeat;
+  background-position: 10px 10px, bottom 240px right 10px, left 55% top -1%,
+    left 45% bottom -1px, center bottom -1px;
+  background-size: auto, auto, auto, auto, 100%;
+}
+
+/* container that contains heading, text and image (hero_wrapper)  */
+
+.hero_wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  gap: 30px;
+}
+
+.hero_text {
+  color: white;
+  max-width: 750px;
+}
+
+.hero_text h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero_text p {
+  margin-bottom: 25px;
+}
+
+
+/* buttons */
+
+.hero_cta {
+}
+
+.hero_btn {
+  padding: 14px 26px;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.readmore_btn {
+  background-color: white;
+  color: black;
+}
+
+.contact_btn {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.contact_btn:is(:hover, :focus) {
+  background-color: white;
+  color: black;
+}
+
+/* hero image container */
+
+.hero_image_container {
+  width: 80%;
+  min-width: 285px;
+}
+
+/* hero image */
+
+.hero_image_container img {
+  width: 100%;
+}
+
+
+@media (max-width: 900px) {
+  .hero_text {
+    font-size: 0.9rem;
+  }
+
+  .hero_text h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 860px) {
+  header {
+    background-color: white;
+  }
+
+  .logo a {
+    color: black;
+  }
+
+  .bars {
+    display: block;
+    margin-left: auto;
+    color: black;
+  }
+
+  .close {
+    display: block;
+    margin-left: auto;
+  }
+
+
+  /* navbar */
+
+  .nav_container {
+    position: fixed;
+    top: 0;
+    left: -220px;
+    min-height: 100vh;
+    width: min(220px, 100%);
+    background-color: white;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 20px;
+    box-shadow: 2.121px 2.121px 3.5px rgba(46,33,17,0.35);
+    border-top-right-radius: 20px;
+    transition: transform 0.25s var(--cubic-out) 0.2s;
+  }
+
+  .nav_list {
+    flex-direction: column;
+    gap: 45px;
+  }
+
+  .nav_list li {
+    text-align: center;
+  }
+
+  .nav_link {
+    color: rgb(45, 42, 42);
+  }
+
+  .nav_link:hover {
+    color: var(--bg-primary);
+  }
+
+  .nav_container.active {
+    visibility: visible;
+    transform: translateX(220px);
+  }
+}
+
+@media (max-width: 730px) {
+
+
+  /* hero section */
+
+  .hero_wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero_image_container {
+    width: 100%;
+  }
+
+  .hero_text {
+    margin-top: 95px;
+  }
+}
+
+@media (max-width: 520px) {
+
+  /* hero section */
+
+  .hero_wrapper {
+    padding: 0 20px;
+  }
+
+  .hero_text h1 {
+    font-size: 23px;
+  }
+
+  .hero_cta {
+    text-align: center;
+  }
+
+  .hero_btn {
+    padding: 8px 11px;
+  }
+}
